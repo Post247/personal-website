@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mughel | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@100;300;400;600;900&display=swap');
+
+        :root {
+            --royal-green: #064e3b;
+            --royal-purple: #581c87;
+            --accent-purple: #a78bfa;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, .logo { font-family: 'Space Grotesk', sans-serif; }
+
+        /* Animated Background Blobs */
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(180deg, var(--royal-purple) 0%, var(--royal-green) 100%);
+            filter: blur(120px);
+            opacity: 0.2;
+            z-index: -1;
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-10%, -10%) rotate(0deg); }
+            to { transform: translate(20%, 20%) rotate(360deg); }
+        }
+
+        /* Bento Grid Glassmorphism */
+        .bento-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .bento-card:hover {
+            border: 1px solid rgba(167, 139, 250, 0.4);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #34d399, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--royal-purple); border-radius: 10px; }
+
+        .logo-box {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--royal-green), var(--royal-purple));
+            border-radius: 12px;
+            font-weight: 900;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="custom-scrollbar">
+
+    <div class="blob" style="top: -100px; left: -100px;"></div>
+    <div class="blob" style="bottom: -100px; right: -100px; animation-delay: -5s;"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-6 py-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="logo-box">M</div>
+            <div class="hidden md:flex gap-8 px-8 py-3 bento-card rounded-full text-sm font-medium">
+                <a href="#home" class="hover:text-purple-400 transition">Home</a>
+                <a href="#experience" class="hover:text-purple-400 transition">Experience</a>
+                <a href="#skills" class="hover:text-purple-400 transition">Skills</a>
+                <a href="#contact" class="hover:text-purple-400 transition">Contact</a>
+            </div>
+            <a href="mailto:mughel.nalini@gmail.com" class="bento-card px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-black transition uppercase tracking-widest">Email Me</a>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 pt-32 pb-20">
+        
+        <!-- Hero Section -->
+        <section id="home" class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-20">
+            <!-- Main Intro -->
+            <div class="lg:col-span-2 bento-card p-10 flex flex-col justify-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-10">
+                    <i class="fas fa-quote-right text-9xl"></i>
+                </div>
+                <h2 class="text-purple-400 font-bold tracking-widest mb-4 uppercase">Business & Data Student</h2>
+                <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                    Mughel <br><span class="text-gradient">Mahalingam</span>
+                </h1>
+                <p class="text-gray-400 text-lg max-w-xl leading-relaxed">
+                    Based in Chennai, I bridge the gap between **Business Operations** and **Data Analysis**. Currently pursuing Pearson BTEC Level 5 HND with a focus on structured, research-backed growth.
+                </p>
+            </div>
+
+            <!-- Profile Links / Quick Info -->
+            <div class="grid grid-rows-2 gap-6">
+                <div class="bento-card p-8 flex flex-col justify-between group">
+                    <div class="flex justify-between items-start">
+                        <i class="fab fa-linkedin text-4xl group-hover:text-blue-400 transition"></i>
+                        <a href="https://www.linkedin.com/in/mughel-mahalingam-564722363/" target="_blank"><i class="fas fa-arrow-up-right-from-square text-gray-500 hover:text-white"></i></a>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">LinkedIn</h3>
+                        <p class="text-sm text-gray-500">Professional Network</p>
+                    </div>
+                </div>
+                <div class="bento-card p-8 flex flex-col justify-between group bg-gradient-to-br from-transparent to-purple-900/20">
+                    <div class="flex justify-between items-start">
+                        <i class="fab fa-instagram text-4xl group-hover:text-pink-400 transition"></i>
+                        <a href="https://www.instagram.com/post_2471/" target="_blank"><i class="fas fa-arrow-up-right-from-square text-gray-500 hover:text-white"></i></a>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Instagram</h3>
+                        <p class="text-sm text-gray-500">Social Portfolio</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Bento Grid Details -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+            <!-- Education Box -->
+            <div class="md:col-span-2 bento-card p-8">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Education</h3>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-white font-semibold">Kings Cornerstone International College</h4>
+                        <p class="text-sm text-purple-400">Pearson BTEC Level 5 HND in Business</p>
+                        <p class="text-xs text-gray-500 mt-1">Business and Administration • 1st Year • Muttukadu</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Summary -->
+            <div class="bento-card p-8">
+                <h3 class="text-lg font-bold mb-4">Top Skills</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-white/5 rounded-md text-xs border border-white/10 italic">Excel Expert</span>
+                    <span class="px-3 py-1 bg-white/5 rounded-md text-xs border border-white/10 italic">Data Reporting</span>
+                    <span class="px-3 py-1 bg-white/5 rounded-md text-xs border border-white/10 italic">SQL</span>
+                    <span class="px-3 py-1 bg-white/5 rounded-md text-xs border border-white/10 italic">Figma</span>
+                    <span class="px-3 py-1 bg-white/5 rounded-md text-xs border border-white/10 italic">Operations</span>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="bento-card p-8 flex flex-col justify-center items-center text-center">
+                <i class="fas fa-location-dot text-3xl text-emerald-500 mb-4 animate-bounce"></i>
+                <h3 class="text-xl font-bold">Chennai</h3>
+                <p class="text-sm text-gray-500">Available for Hybrid Roles</p>
+            </div>
+        </div>
+
+        <!-- Experience & Detailed Skills -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Detailed Experience -->
+            <div class="lg:col-span-2 bento-card p-10">
+                <h3 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                    <span class="w-8 h-[2px] bg-purple-500"></span> Work History
+                </h3>
+                
+                <div class="relative pl-8 border-l border-white/10">
+                    <div class="absolute -left-[5px] top-0 w-[9px] h-[9px] rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981]"></div>
+                    <div class="mb-10">
+                        <div class="flex flex-wrap justify-between items-center mb-2">
+                            <h4 class="text-xl font-bold text-white">Retail Operations Intern</h4>
+                            <span class="text-xs font-mono bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full">INTERNSHIP</span>
+                        </div>
+                        <p class="text-purple-400 font-medium mb-4">Burger King • Retail Operations</p>
+                        <ul class="space-y-3 text-gray-400 text-sm">
+                            <li class="flex gap-3">
+                                <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                                <span>Executed high-volume retail operations with a focus on speed and accuracy.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                                <span>Assisted in operational analysis to improve customer throughput.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                                <span>Supported business documentation and internal data reporting workflows.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Skills Box -->
+            <div class="bento-card p-8">
+                <h3 class="text-xl font-bold mb-8">Technical Proficiencies</h3>
+                
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>Microsoft Excel</span>
+                            <span class="text-emerald-400">80%</span>
+                        </div>
+                        <div class="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+                            <div class="h-full bg-emerald-500 w-[80%]"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>Business Analysis</span>
+                            <span class="text-purple-400">70%</span>
+                        </div>
+                        <div class="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+                            <div class="h-full bg-purple-500 w-[70%]"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>SQL / Data Management</span>
+                            <span class="text-emerald-400">40%</span>
+                        </div>
+                        <div class="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+                            <div class="h-full bg-emerald-500 w-[40%]"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>Figma (UI/UX)</span>
+                            <span class="text-purple-400">50%</span>
+                        </div>
+                        <div class="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+                            <div class="h-full bg-purple-500 w-[50%]"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 pt-6 border-t border-white/5">
+                    <h4 class="text-sm font-bold mb-4 uppercase text-gray-500">Interests</h4>
+                    <div class="grid grid-cols-2 gap-y-3 text-xs text-gray-300">
+                        <span><i class="fas fa-microchip mr-2 text-purple-400"></i> Reverse Eng.</span>
+                        <span><i class="fas fa-globe mr-2 text-emerald-400"></i> Geopolitics</span>
+                        <span><i class="fas fa-running mr-2 text-purple-400"></i> Marathon</span>
+                        <span><i class="fas fa-gamepad mr-2 text-emerald-400"></i> Gaming</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="px-6 pb-12">
+        <div class="max-w-7xl mx-auto bento-card p-12 text-center relative overflow-hidden">
+            <div class="relative z-10">
+                <h2 class="text-4xl font-black mb-4">Want to work together?</h2>
+                <p class="text-gray-400 mb-10 max-w-md mx-auto">I'm currently looking for internships where I can apply my analytical skills and retail background.</p>
+                
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="mailto:mughel.nalini@gmail.com" class="flex items-center gap-3 px-8 py-4 bg-white text-black rounded-2xl font-bold hover:scale-105 transition">
+                        <i class="fas fa-envelope"></i> Get in Touch
+                    </a>
+                    <a href="tel:+919841625740" class="flex items-center gap-3 px-8 py-4 bg-purple-600 text-white rounded-2xl font-bold hover:scale-105 transition">
+                        <i class="fas fa-phone"></i> Call Me
+                    </a>
+                </div>
+            </div>
+            <!-- Background Decorative Text -->
+            <div class="absolute -bottom-10 left-0 right-0 text-[12rem] font-black opacity-[0.02] select-none pointer-events-none">
+                MAHALINGAM
+            </div>
+        </div>
+        <p class="text-center mt-12 text-xs text-gray-600 tracking-[0.5em] uppercase">© 2024 Design by AI for Mughel</p>
+    </footer>
+
+</body>
+</html>
